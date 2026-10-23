@@ -1,0 +1,434 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NVS | Giao việc – Theo dõi</title><style>
+:root{--navy:#10375e;--blue:#0869c9;--cyan:#10b6dd;--line:#d7e6f5;--muted:#66819d;--bg:#f4f8fd}*{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,'Segoe UI',sans-serif;background:linear-gradient(130deg,#e7f2ff,#f8fbff 45%,#eaf8fb);color:#183b61}button,input,select,textarea{font:inherit}button{cursor:pointer}header{background:linear-gradient(110deg,#0b3765,#076ac5);color:#fff;padding:24px max(20px,calc((100vw - 1380px)/2));display:flex;justify-content:space-between;align-items:center;gap:12px}header h1{margin:0;font-size:25px}header p{margin:5px 0 0;color:#cde7ff}.pill{background:#ffffff24;padding:8px 13px;border-radius:999px;font-size:12px;white-space:nowrap}.layout{max-width:1380px;margin:25px auto;padding:0 20px;display:grid;grid-template-columns:245px minmax(0,1fr);gap:20px}.side,.panel{background:#fff;border:1px solid var(--line);box-shadow:0 14px 40px #16487510;border-radius:20px}.side{padding:16px;height:max-content;position:sticky;top:16px}.side h3{font-size:12px;color:#6d8cab;text-transform:uppercase;letter-spacing:1px;margin:10px}.nav{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:0;border-radius:12px;padding:13px 12px;background:transparent;color:#31587c;font-weight:650;margin:4px 0}.nav.active{background:#e8f3ff;color:#0563b7}.nav:hover{background:#eff7ff}.nav span{font-size:19px}.main{min-width:0}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}.stat{background:white;border:1px solid var(--line);border-radius:16px;padding:15px}.stat b{display:block;font-size:26px;color:#0a62b4}.stat small{color:var(--muted)}.panel{padding:22px;margin-bottom:18px}.topline{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.topline h2{margin:0;font-size:21px}.sub{color:var(--muted);font-size:13px;margin:5px 0 20px}.primary,.secondary,.ghost{border-radius:11px;padding:10px 16px;font-weight:700;border:1px solid transparent}.primary{background:linear-gradient(120deg,#0876d6,#0756b0);color:white}.secondary{background:#e8f4ff;color:#0b62b4;border-color:#cde5fc}.ghost{background:white;border-color:#cbdff2;color:#26577f}.primary:hover,.secondary:hover,.ghost:hover{filter:brightness(.96)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.field{min-width:0}.field.wide{grid-column:1/-1}label{display:block;font-size:13px;font-weight:750;color:#2b5379;margin-bottom:7px}input,select,textarea{width:100%;border:1px solid #c6dff4;background:#fbfdff;color:#234669;border-radius:11px;padding:12px 15px;outline:none;min-height:45px}input:focus,select:focus,textarea:focus{border-color:#2986d8;box-shadow:0 0 0 3px #d9edff}select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23096abb' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:42px}textarea{resize:vertical;min-height:130px}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.muted{color:var(--muted);font-size:13px}.section-title{margin:24px 0 12px;font-size:16px;color:#143e69}.tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}.tool{display:flex;gap:10px;align-items:flex-start;padding:13px;border:1px solid var(--line);border-radius:13px;background:#f9fcff;cursor:pointer}.tool:has(input:checked){border-color:#4e9be4;background:#edf7ff}.tool input{width:17px;min-height:17px;margin:2px 0;accent-color:#0875cf}.tool strong{display:block;font-size:13px}.tool small{display:block;font-size:11px;color:#7890a8}.addon{border:1px solid #d5e6f5;background:#f8fbff;border-radius:14px;padding:15px;margin-top:14px}.addon h4{margin:0 0 12px}.actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;margin-top:22px;border-top:1px solid #e2eef8;padding-top:18px}.notice{border-radius:12px;background:#eaf6ff;border:1px solid #d2eaff;color:#24587f;padding:12px 14px;font-size:13px}.list-card{padding:14px 0;border-bottom:1px solid #e5eef7;display:flex;gap:12px;justify-content:space-between;align-items:center}.list-card:last-child{border:0}.tag{border-radius:30px;background:#edf6ff;color:#176ab3;padding:5px 10px;font-size:11px;font-weight:700}.tag.orange{background:#fff4e7;color:#a45e11}.tag.green{background:#e8f9f1;color:#08734e}.hidden{display:none!important}.preview{background:white;border:1px solid #d4e4f1;border-radius:16px;padding:22px;margin-top:16px;box-shadow:0 6px 18px #134b7610}.preview h3{margin:5px 0 10px}.preview .body{white-space:pre-wrap;line-height:1.8}.preview hr{border:0;border-top:1px solid #e0ebf6}.toast{position:fixed;bottom:24px;right:24px;background:#153f6c;color:white;padding:13px 20px;border-radius:12px;box-shadow:0 12px 30px #1236;display:none;z-index:20}.modal-bg{position:fixed;inset:0;background:#0a234b99;display:none;align-items:center;justify-content:center;padding:15px;z-index:10}.modal{background:white;border-radius:18px;padding:24px;width:min(650px,100%);max-height:90vh;overflow:auto}.modal h2{margin-top:0}@media(max-width:950px){.layout{grid-template-columns:1fr}.side{position:static;display:flex;overflow:auto;gap:6px}.side h3{display:none}.nav{width:auto;white-space:nowrap}.stats{grid-template-columns:repeat(2,1fr)}.tools{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){header{padding:18px}header h1{font-size:20px}.layout{padding:0 10px;margin:12px auto}.panel{padding:16px}.grid,.tools{grid-template-columns:1fr}.stats{gap:8px}.stat{padding:12px}.side{padding:8px}.nav{font-size:12px;padding:10px}.pill{display:none}}
+</style><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"><style id="nvs14-header-css">
+:root{
+  --hva-h-navy:#073b78;
+  --hva-h-blue:#075cad;
+  --hva-h-cyan:#08abc5;
+  --hva-h-white:#f8fdff;
+  --hva-h-line:rgba(190,238,255,.58);
+}
+
+.hva-pro-header{
+  position:sticky;top:0;z-index:40;
+  margin:12px 14px 0;
+  min-height:126px;
+  border-radius:16px;
+  overflow:hidden;isolation:isolate;
+  color:var(--hva-h-white);
+  background:
+    radial-gradient(circle at 82% 34%,rgba(24,225,255,.26),transparent 22%),
+    radial-gradient(circle at 55% 110%,rgba(0,200,255,.36),transparent 31%),
+    linear-gradient(108deg,var(--hva-h-navy) 0%,#064b96 29%,var(--hva-h-blue) 53%,#078fc0 77%,var(--hva-h-cyan) 100%);
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 10px 28px rgba(3,43,84,.18),inset 0 1px 0 rgba(255,255,255,.12);
+}
+
+/* Lớp hiệu ứng công nghệ */
+.hva-pro-header::before{
+  content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;opacity:.55;
+  background:
+    radial-gradient(circle at 48% 25%,#67f4ff 0 1px,transparent 2px),
+    radial-gradient(circle at 56% 70%,#3fe2ff 0 1.2px,transparent 2.2px),
+    radial-gradient(circle at 64% 22%,#72f5ff 0 1.1px,transparent 2px),
+    radial-gradient(circle at 72% 68%,#45e6ff 0 1.2px,transparent 2.2px),
+    linear-gradient(60deg,transparent 49.5%,rgba(91,228,255,.30) 50%,transparent 50.5%) 44% 0/118px 82px,
+    linear-gradient(120deg,transparent 49.5%,rgba(91,228,255,.24) 50%,transparent 50.5%) 48% 0/150px 96px;
+}
+.hva-pro-header::after{
+  content:"";position:absolute;z-index:-1;
+  width:245px;height:245px;right:-22px;top:-58px;
+  border-radius:50%;pointer-events:none;opacity:.20;
+  border:1px solid rgba(129,239,255,.72);
+  background:
+    repeating-radial-gradient(circle,transparent 0 21px,rgba(128,238,255,.28) 22px 23px),
+    repeating-linear-gradient(90deg,transparent 0 27px,rgba(128,238,255,.20) 28px 29px),
+    repeating-linear-gradient(0deg,transparent 0 27px,rgba(128,238,255,.18) 28px 29px);
+  box-shadow:0 0 48px rgba(48,221,255,.28),inset 0 0 35px rgba(53,224,255,.22);
+}
+
+.hva-pro-header-inner{
+  min-height:124px;max-width:1460px;margin:0 auto;padding:13px 24px;
+  display:grid;
+  grid-template-columns:58px minmax(570px,1fr) auto;
+  align-items:center;gap:20px;
+}
+
+/* Nút quay lại */
+.hva-pro-back{
+  width:54px;height:54px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  color:#eaf8ff;
+  background:linear-gradient(145deg,rgba(16,112,187,.95),rgba(7,73,141,.95));
+  border:1.5px solid rgba(79,192,255,.50);
+  box-shadow:0 6px 16px rgba(0,36,78,.20),inset 0 1px 0 rgba(255,255,255,.11);
+  transition:transform .14s ease,filter .14s ease,box-shadow .14s ease;
+}
+.hva-pro-back i{font-size:27px;line-height:1;-webkit-text-stroke:.28px currentColor}
+.hva-pro-back:hover{filter:brightness(1.12);transform:translateY(-1px);box-shadow:0 9px 20px rgba(0,35,77,.24)}
+.hva-pro-back:active{transform:translateY(2px) scale(.98)}
+
+/* Logo + thương hiệu */
+.hva-pro-brand{min-width:0;display:flex;align-items:center}
+.hva-pro-logo{
+  width:88px;height:88px;flex:0 0 88px;object-fit:contain;
+  filter:drop-shadow(0 5px 10px rgba(0,31,76,.28));
+}
+.hva-pro-divider{
+  width:1px;height:70px;flex:0 0 1px;
+  background:linear-gradient(transparent,var(--hva-h-line) 16%,var(--hva-h-line) 84%,transparent);
+}
+.hva-pro-brandtext{
+  min-width:0;width:min(620px,100%);
+  text-align:center;line-height:1.06;
+}
+.hva-pro-kicker{
+  font-size:14px;font-weight:800;letter-spacing:.17em;
+  color:rgba(226,244,255,.90);white-space:nowrap;
+}
+.hva-pro-school{
+  margin-top:7px;font-size:30px;font-weight:800;letter-spacing:-.025em;
+  color:#fff;white-space:nowrap;text-shadow:0 2px 10px rgba(0,31,72,.28);
+}
+.hva-pro-slogan{
+  margin-top:8px;font-size:15px;font-weight:600;
+  color:rgba(235,248,255,.90);white-space:nowrap;
+}
+.hva-pro-slogan b{font-weight:800;padding:0 5px;color:#d9f7ff}
+
+/* Cụm bên phải */
+.hva-pro-tools{display:flex;align-items:center;justify-content:flex-end;gap:9px;white-space:nowrap}
+.hva-pro-online{
+  height:42px;padding:0 17px;display:flex;align-items:center;gap:10px;
+  border-radius:22px;border:1.5px solid rgba(83,246,237,.88);
+  background:rgba(2,77,119,.40);
+  box-shadow:inset 0 0 20px rgba(22,230,225,.08),0 5px 15px rgba(0,40,84,.14);
+  font-size:12px;font-weight:800;
+}
+.hva-pro-online-dot{
+  width:11px;height:11px;border-radius:50%;background:#19e98a;
+  box-shadow:0 0 0 5px rgba(25,233,138,.12),0 0 13px rgba(25,233,138,.82);
+}
+.hva-meeting-history{position:relative;margin-top:10px;background:transparent}
+.hva-meeting-history-actions{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:stretch}
+.hva-meeting-history-btn,.hva-meeting-count-btn{
+  min-height:46px;padding:10px 14px;display:flex;align-items:center;gap:9px;
+  color:#0F4C81;background:#eaf6ff;border:1.5px solid #b9d9ee;border-radius:14px;
+  box-shadow:0 5px 15px rgba(15,76,129,.06);
+  font-size:12px;font-weight:900;letter-spacing:.01em;
+  transition:background .14s ease,transform .14s ease,box-shadow .14s ease
+}
+.hva-meeting-history-btn{justify-content:flex-start;text-align:left}
+.hva-meeting-count-btn{justify-content:center;text-align:center;white-space:nowrap}
+.hva-meeting-count-number{color:#ea580c;font-size:13px;font-weight:950}
+.hva-meeting-history-btn:hover,.hva-meeting-count-btn:hover{background:#dff1fd;box-shadow:0 7px 18px rgba(15,76,129,.10)}
+.hva-meeting-history-btn:active,.hva-meeting-count-btn:active{transform:translateY(1px)}
+.hva-meeting-history-btn i,.hva-meeting-count-btn i{font-size:14px;-webkit-text-stroke:.3px currentColor;transition:transform .16s ease}
+.hva-meeting-history.is-open .hva-meeting-count-btn i{transform:rotate(180deg)}
+.hva-meeting-history-menu{
+  display:none;position:static;width:100%;overflow:hidden;margin-top:8px;
+  background:#fff;color:#16324a;border:1.5px solid #d9e7f2;border-radius:14px;
+  box-shadow:0 8px 22px rgba(15,76,129,.08)
+}
+.hva-meeting-history.is-open .hva-meeting-history-menu{display:block}
+.hva-meeting-history-head{padding:12px 15px;border-bottom:1px solid #e6eef5;background:#f6fbff;color:#075cad;font-size:12px;font-weight:800}
+.hva-meeting-history-list{max-height:330px;overflow:auto}
+.hva-meeting-history-empty{padding:20px 16px;text-align:center;color:#64748b;font-size:12px;font-weight:600}
+.hva-meeting-history-item{width:100%;display:grid;grid-template-columns:26px minmax(0,1fr);gap:9px;padding:11px 14px;text-align:left;background:#fff;border:0;border-bottom:1px solid #edf2f7;color:#16324a}
+.hva-meeting-history-item:last-child{border-bottom:0}
+.hva-meeting-history-item:hover{background:#f4faff}
+.hva-meeting-history-no{width:24px;height:24px;border-radius:7px;display:flex;align-items:center;justify-content:center;background:#e8f4ff;color:#075cad;font-size:11px;font-weight:900}
+.hva-meeting-history-name{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;font-weight:800;color:#123b60}
+.hva-meeting-history-meta{margin-top:4px;display:flex;flex-wrap:wrap;gap:4px 12px;color:#64748b;font-size:10.5px;font-weight:600}
+@media(max-width:470px){
+  .hva-meeting-history-actions{grid-template-columns:1fr 1fr;gap:8px}
+  .hva-meeting-history-btn,.hva-meeting-count-btn{min-height:44px;padding:8px 9px;font-size:10px}
+  .hva-meeting-count-btn{white-space:normal}
+  .hva-meeting-count-number{font-size:11px}
+}
+
+.hva-pro-divider-right{height:52px;margin:0 3px}
+
+.hva-pro-user{
+  min-width:205px;display:flex;align-items:center;gap:10px;padding:5px 6px;
+  border-radius:14px;color:#fff;background:transparent;border:1px solid transparent;text-align:left;
+}
+.hva-pro-user:hover{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.10)}
+.hva-pro-avatar{
+  width:52px;height:52px;flex:0 0 52px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;color:#0c73bd;background:#f4fbff;
+  box-shadow:0 3px 12px rgba(0,31,76,.17);
+}
+.hva-pro-avatar i{font-size:31px}
+.hva-pro-usertext{min-width:0;display:flex;flex-direction:column;gap:3px}
+.hva-pro-usertext strong,.hva-pro-usertext small{
+  max-width:155px;overflow:hidden;text-overflow:ellipsis;
+}
+.hva-pro-usertext strong{font-size:13px;font-weight:800;line-height:1.15}
+.hva-pro-usertext small{font-size:11px;font-weight:500;color:rgba(236,248,255,.88)}
+.hva-pro-userchev{margin-left:auto;font-size:14px;-webkit-text-stroke:.25px currentColor}
+
+/* Tablet */
+@media(max-width:1080px){
+  .hva-pro-header-inner{grid-template-columns:50px minmax(430px,1fr) auto;padding:11px 16px;gap:13px}
+  .hva-pro-logo{width:75px;height:75px;flex-basis:75px}
+  .hva-pro-divider{height:60px}
+  .hva-pro-kicker{font-size:11px}
+  .hva-pro-school{font-size:24px}
+  .hva-pro-slogan{font-size:12px}
+  .hva-pro-user{min-width:auto}
+  .hva-pro-usertext,.hva-pro-userchev{display:none}
+  .hva-pro-avatar{width:44px;height:44px;flex-basis:44px}
+}
+
+/* Mobile */
+@media(max-width:720px){
+  .hva-pro-header{margin:6px 6px 0;border-radius:13px;min-height:78px}
+  .hva-pro-header-inner{min-height:76px;padding:7px 9px;grid-template-columns:37px minmax(0,1fr) auto;gap:7px}
+  .hva-pro-back{width:36px;height:36px;border-radius:10px}
+  .hva-pro-back i{font-size:18px}
+  .hva-pro-brand{gap:7px}
+  .hva-pro-logo{width:49px;height:49px;flex-basis:49px}
+  .hva-pro-divider{height:42px}
+  .hva-pro-brandtext{width:auto}
+  .hva-pro-kicker{font-size:7px;letter-spacing:.08em;white-space:normal}
+  .hva-pro-school{font-size:14px;margin-top:3px;white-space:normal}
+  .hva-pro-slogan{font-size:8px;margin-top:4px;white-space:normal}
+  .hva-pro-tools{gap:3px}
+  .hva-pro-online{height:31px;padding:0 9px;font-size:9px}
+  .hva-pro-online-dot{width:8px;height:8px}
+  .hva-pro-header::after{right:-105px;opacity:.12}
+}
+@media(max-width:470px){
+  .hva-pro-online{
+    width:auto;
+    min-width:92px;
+    padding:0 10px;
+    justify-content:center;
+    gap:7px;
+  }
+  .hva-pro-online span:last-child{display:inline}
+}
+
+/* ===== USER TRONG CARD TẠO CUỘC HỌP ===== */
+.hva-create-user-card{gap:18px}
+.hva-create-user{
+  margin-left:auto;display:flex;align-items:center;gap:10px;
+  padding-left:18px;border-left:1px solid rgba(255,255,255,.30);
+  color:#fff;white-space:nowrap;
+}
+.hva-create-avatar{
+  width:48px;height:48px;flex:0 0 48px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:#f4fbff;color:#0c73bd;box-shadow:0 3px 10px rgba(0,31,76,.16);
+}
+.hva-create-avatar i{font-size:28px}
+.hva-create-usertext{display:flex;flex-direction:column;gap:3px;min-width:0}
+.hva-create-usertext strong{max-width:180px;overflow:hidden;text-overflow:ellipsis;font-size:13px;font-weight:900;line-height:1.15}
+.hva-create-usertext small{max-width:180px;overflow:hidden;text-overflow:ellipsis;font-size:11px;font-weight:600;color:rgba(235,248,255,.90)}
+@media(max-width:720px){
+  .hva-create-user-card{gap:10px}
+  .hva-create-user{padding-left:10px;gap:7px}
+  .hva-create-avatar{width:38px;height:38px;flex-basis:38px}
+  .hva-create-avatar i{font-size:22px}
+  .hva-create-usertext strong{max-width:110px;font-size:10px}
+  .hva-create-usertext small{max-width:110px;font-size:9px}
+}
+@media(max-width:430px){
+  .hva-create-user-card{flex-wrap:wrap}
+  .hva-create-user{width:100%;margin-left:0;padding:9px 0 0;border-left:0;border-top:1px solid rgba(255,255,255,.25)}
+}
+
+
+/* Nút × trên từng người/nhóm đã chọn */
+.chip-remove{
+  width:18px;height:18px;flex:0 0 18px;border:0;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:0;margin:0 -2px 0 1px;
+  background:rgba(15,76,129,.10);color:#0F4C81;
+  font-size:16px;font-weight:900;line-height:1;cursor:pointer;
+}
+.chip-remove:hover{background:#fee2e2;color:#dc2626}
+
+
+/* ===== HVA QR CONTROL PASS6 — chỉ bố cục, không đổi nghiệp vụ ===== */
+.hva-qr-control{display:block!important;padding:16px!important}
+.hva-qr-control-head{display:flex;align-items:center;gap:10px}
+.hva-qr-control-head .hero-icon-qr{flex:0 0 auto}
+.hva-qr-control-title{min-width:0;flex:1}
+.hva-qr-refresh{flex:0 0 auto}
+.hva-qr-meetings{margin-top:12px!important;display:grid;gap:10px}
+.hva-qr-meeting-card{
+  padding:12px;border:1.5px solid #ddd6fe;border-radius:14px;
+  background:rgba(255,255,255,.78);box-shadow:0 4px 12px rgba(91,33,182,.05)
+}
+.hva-qr-meeting-top{display:flex;align-items:flex-start;gap:10px}
+.hva-qr-meeting-info{min-width:0;flex:1}
+.hva-qr-meeting-name{font-size:12px;font-weight:900;color:#1e293b;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hva-qr-meeting-meta{margin-top:3px;font-size:10px;font-weight:600;color:#64748b}
+.hva-qr-meeting-status{margin-top:6px}
+.hva-qr-actions{margin-top:10px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.hva-qr-action{
+  min-height:36px;padding:6px 8px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;gap:5px;
+  font-size:9px;font-weight:900;white-space:nowrap
+}
+.hva-qr-action-in{background:#7c3aed;color:#fff}
+.hva-qr-action-out{background:#f59e0b;color:#fff}
+.hva-qr-action-talk{background:#ecfeff;color:#0e7490;border:1px solid #a5f3fc}
+.hva-qr-action-end{background:#fff7ed;color:#dc2626;border:1px solid #fecaca}
+.hva-qr-action-history{grid-column:1/-1;background:#f8fafc;color:#475569;border:1px solid #e2e8f0}
+@media(max-width:470px){
+  .hva-qr-control{padding:13px!important}
+  .hva-qr-control-head{align-items:center}
+  .hva-qr-control-head .hero-icon-qr{width:42px;height:42px;flex-basis:42px}
+  .hva-qr-refresh{width:38px;height:38px;padding:0!important;border-radius:11px!important}
+  .hva-qr-refresh span{display:none}
+  .hva-qr-actions{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+  .hva-qr-action{padding:5px 4px;font-size:8.5px}
+}
+
+
+.hva-pro-header{position:relative!important;top:auto!important;margin-bottom:18px!important}.hva-pro-tools .hva-pro-back{width:48px;height:48px;text-decoration:none}.hva-pro-brandtext{text-align:center} .hva-pro-brand{justify-content:center} @media(max-width:720px){.hva-pro-tools .hva-pro-back{width:36px;height:36px}.hva-pro-tools .hva-pro-online-wrap{display:none}}
+</style><style id="nvs15-style">
+:root{--nvs15-blue:#075cad;--nvs15-ink:#183f63} .hva-pro-header{position:relative!important;top:auto!important}
+.hva-pro-tools .nvs-home{display:flex;align-items:center;justify-content:center;width:54px;height:54px;padding:0;text-decoration:none}
+.hva-pro-tools .nvs-home i{font-size:26px}
+@media(max-width:720px){.hva-pro-tools .nvs-home{width:36px;height:36px}.hva-pro-tools .nvs-home i{font-size:18px}}
+select{appearance:none!important;-webkit-appearance:none!important;background-color:#fff!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Crect x='1' y='1' width='38' height='38' rx='9' fill='%23176fb8'/%3E%3Cpath d='m12 16 8 8 8-8' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")!important;background-size:38px 38px!important;background-position:right 3px center!important;background-repeat:no-repeat!important;padding-right:50px!important;min-height:47px}
+.nvs15-card{margin:18px 0;background:#fff;border:1.5px solid #c8d8e9;border-radius:20px;padding:22px;box-shadow:0 6px 24px #0c39660b;color:#31435a}
+.nvs15-title{font-size:16px;font-weight:900;letter-spacing:.03em;display:flex;align-items:center;gap:12px;margin:0 0 17px;color:#344359}.nvs15-title i{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:#eaf5fd;color:#1467ad;font-size:20px}
+.nvs15-input,.nvs15-area{width:100%;padding:13px 17px;border:1.6px solid #99aec7;border-radius:12px;background:#fff;color:#203d5c;font:inherit;outline:none;min-height:48px}.nvs15-input:focus,.nvs15-area:focus{border-color:#1674be;box-shadow:0 0 0 3px #1674be1a}.nvs15-area{min-height:115px;resize:vertical;line-height:1.65}
+.nvs15-search{position:relative}.nvs15-search i{position:absolute;top:16px;left:14px;color:#7290a9}.nvs15-search input{padding-left:43px}
+.nvs15-groups{max-height:470px;overflow:auto;margin-top:12px;padding:2px 3px}.nvs15-group{border:1px solid #d8e5f1;border-radius:15px;margin:10px 0;overflow:hidden;background:#fff}.nvs15-group-head{display:flex;align-items:center;gap:12px;min-height:66px;padding:12px 16px;background:#f5faff}.nvs15-group-head .nvs15-expand{border:0;background:none;color:#1765a5;font-size:17px;cursor:pointer;padding:6px}.nvs15-group-head strong{color:#0f5189;font-size:15px}.nvs15-group-head small{color:#657b92;font-size:12px}.nvs15-pick{display:flex;align-items:center;gap:8px;margin-left:auto;white-space:nowrap;font-size:12px;font-weight:800;color:#22557e;border:1px solid #d9e6f4;border-radius:12px;padding:9px 12px;cursor:pointer}.nvs15-pick input,.nvs15-person input{width:19px;height:19px;accent-color:#146ab8;flex-shrink:0}.nvs15-members{padding:6px 16px 12px;display:none}.nvs15-group.expanded .nvs15-members{display:block}.nvs15-person{display:flex;align-items:center;gap:10px;padding:10px;border-bottom:1px solid #edf2f7;cursor:pointer;font-size:13px}.nvs15-person:last-child{border-bottom:0}.nvs15-person:hover{background:#f3f9ff}.nvs15-selected{margin-top:13px;border-top:1px solid #e1eaf3;padding-top:12px}.nvs15-chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}.nvs15-chip{border:1px solid #a9d6f4;border-radius:25px;background:#e9f5ff;color:#11598e;padding:7px 10px;font-size:12px;font-weight:750;cursor:pointer}.nvs15-clear{margin-left:auto;border:0;background:none;color:#d52d35;font-weight:800;cursor:pointer}.nvs15-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:14px}.nvs15-btn{border:0;border-radius:12px;padding:12px 17px;background:linear-gradient(#187dbf,#09508d);color:#fff;font-weight:900;box-shadow:0 6px 0 #173e6040;cursor:pointer}.nvs15-btn:disabled{opacity:.55;cursor:wait}.nvs15-publish{background:linear-gradient(#20c667,#148b42)!important;color:white!important}.nvs15-status{font-size:12px;color:#5c7791;line-height:1.6;margin-top:10px;white-space:pre-wrap}.nvs15-robot{display:grid;place-items:center;width:62px;height:62px;flex-shrink:0;border-radius:19px;background:linear-gradient(135deg,#dffbff,#e8edff);border:1px solid #9fd5f6;box-shadow:0 5px 14px #1773b02a}.nvs15-robot svg{width:48px;height:48px}.nvs15-aihead{display:flex;gap:13px;align-items:center;margin-bottom:14px}.nvs15-aihead h3{margin:0;color:#124c83;font-size:17px}.nvs15-aihead p{font-size:12px;color:#607c94;margin:5px 0 0}.nvs15-result{min-height:90px;margin-top:12px}.nvs15-empty{color:#71869b;font-size:13px;padding:18px}.nvs15-help{font-size:12px;color:#607c94;line-height:1.6}.nvs15-counter{font-weight:800;color:#0e568f;font-size:13px}
+@media(max-width:640px){.nvs15-card{padding:14px;margin:13px 7px}.nvs15-group-head{padding:10px 8px;gap:5px}.nvs15-group-head strong{font-size:12px}.nvs15-pick{padding:7px 6px;font-size:10px}.nvs15-btn{flex:1;font-size:12px}.nvs15-aihead h3{font-size:14px}}
+</style><style id="nvs16-match-meeting">
+/* V16: đồng bộ Cuộc họp, không can thiệp backend hay sự kiện đang PASS */
+#nvs15Personnel .nvs15-card{border:2px solid #cbd5e1!important;border-radius:20px!important;background:white!important;padding:20px!important;box-shadow:0 5px 18px #123b6012!important}
+#nvs15Personnel .nvs15-title{font-weight:900!important;color:#334155!important;text-transform:uppercase;display:flex;align-items:center;gap:12px}
+#nvs15Personnel .nvs15-title>i{display:inline-grid;place-items:center;background:#eaf4fc;color:#0f4c81;border-radius:12px;width:44px;height:44px;font-size:20px}
+#nvs15Personnel .nvs15-counter{margin-left:auto;background:#eff6ff;border:1px solid #cbd5e1;border-radius:10px;padding:8px 11px;white-space:nowrap}
+#nvs15Personnel .nvs15-groups{border:1px solid #e2e8f0!important;border-radius:15px!important;max-height:380px!important;padding:9px!important}
+#nvs15Personnel .nvs15-group{border:1px solid #e2e8f0!important;border-radius:18px!important;margin:10px 0!important;box-shadow:0 3px 10px #123b600d}
+#nvs15Personnel .nvs15-group-head{background:white!important;min-height:70px!important}
+#nvs15Personnel .nvs15-group-head strong{font-size:15px!important;font-weight:900!important;color:#0f4c81!important}
+#nvs15Personnel .nvs15-pick{border:1px solid #dbe5f0!important;border-radius:13px!important;background:white!important;padding:9px 13px!important}
+#nvs15Personnel .nvs15-selected{border-top:2px solid #e2e8f0!important;margin-top:16px!important;padding-top:15px!important}
+.nvs16-action-panel{padding:18px;margin-top:20px;border:2px solid #94a3b8;border-radius:18px;background:#fff;box-shadow:0 8px 20px #0f172a14}
+.nvs16-action-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.nvs16-action-grid button{width:100%;min-height:60px;border:0!important;border-radius:15px!important;display:flex;justify-content:center;align-items:center;gap:9px;color:white!important;font-size:15px!important;font-weight:900!important;box-shadow:0 7px 0 #0f172a2e,0 12px 17px #0f172a14!important;cursor:pointer}
+.nvs16-action-grid button:active{transform:translateY(4px);box-shadow:0 2px 0 #0f172a2e!important}
+.nvs16-cancel{background:linear-gradient(#f03e3e,#dc2626)!important}
+.nvs16-preview{background:linear-gradient(#167abf,#0f4c81)!important}
+.nvs16-publish{background:linear-gradient(#22c55e,#15803d)!important}
+.nvs16-draft{width:100%;min-height:47px;margin-top:16px;border:1.5px solid #94a3b8;border-radius:12px;background:#f8fafc;color:#475569;font-weight:900;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer}
+@media(max-width:640px){.nvs16-action-grid{grid-template-columns:1fr;gap:12px}.nvs16-action-grid button{min-height:50px}#nvs15Personnel .nvs15-card{padding:12px!important}#nvs15Personnel .nvs15-group-head strong{font-size:12px!important}}
+</style><style id="gv-personnel-parity">#people{max-height:420px;overflow-y:auto;padding:8px;border:1px solid #dbe5f0;border-radius:14px}.gv-group{border:1px solid #dce6f0;border-radius:14px;margin:8px 0;background:#fff;overflow:hidden}.gv-group-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px}.gv-expand{border:0;background:transparent;color:#0f568b;font-weight:800;text-align:left;cursor:pointer;flex:1}.gv-selectall{font-size:12px;white-space:nowrap;display:flex;align-items:center;gap:5px}.gv-members{border-top:1px solid #e4eaf1;padding:8px 12px}.gv-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 9px;margin:3px;border-radius:18px;background:#e8f3fc;color:#0f568b;font-size:12px}.gv-chip button{border:0;background:none;color:#0f568b;font-weight:900;cursor:pointer}#picked{display:block;line-height:2}</style>
+</head>
+<style id="task-ux">.layout{grid-template-columns:240px minmax(0,1fr)}.task-stat{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}.task-stat>div{padding:14px;background:#fff;border:1px solid #d4e5f5;border-radius:14px}.task-stat b{display:block;font-size:23px;color:#075cad}.task-item{padding:16px;margin:12px 0;border:1px solid #d7e6f5;border-radius:14px;background:#fbfdff}.task-item h3{margin:0 0 6px}.task-item small{color:#617d99}.task-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.task-actions button{padding:8px 12px}.task-selected{padding:10px;border:1px solid #d2e7f8;background:#f3faff;border-radius:12px;margin-top:9px}.task-people{max-height:280px;overflow:auto;border:1px solid #d7e6f5;border-radius:12px;padding:10px}.task-person{display:flex;gap:9px;align-items:center;padding:7px 5px;border-bottom:1px solid #edf3f8}.task-person input{width:18px;min-height:18px}.task-person label{margin:0;cursor:pointer}.task-alert{padding:10px 13px;border:1px solid #cde4f8;background:#f2f9ff;border-radius:11px;margin:12px 0}.task-alert.error{border-color:#ffb9b9;background:#fff5f5;color:#9b1c1c}.task-status{font-weight:700;color:#0a5a9b}@media(max-width:800px){.task-stat{grid-template-columns:repeat(2,1fr)}.layout{grid-template-columns:1fr}}@media(max-width:600px){.task-stat{grid-template-columns:repeat(2,1fr)}.task-actions button{flex:1}}</style>
+<body><header class="hva-pro-header">
+  <div class="hva-pro-header-inner">
+
+    <button type="button"
+            class="hva-pro-back"
+            onclick="location.href='./DieuHanh.html'"
+            aria-label="Quay lại trang Điều hành Nghiệp vụ số"
+            title="Quay lại">
+      <i class="bi bi-arrow-left"></i>
+    </button>
+
+    <div class="hva-pro-brand">
+<span class="hva-pro-divider" aria-hidden="true"></span>
+
+      <div class="hva-pro-brandtext">
+        <div class="hva-pro-kicker">NGHIỆP VỤ SỐ THÔNG MINH</div>
+        <div class="hva-pro-school">Trường THPT Hòa Vang</div>
+        <div class="hva-pro-slogan">Quản trị thông minh <b>•</b> Giáo dục sáng tạo</div>
+      </div>
+    </div>
+
+    <div class="hva-pro-tools"><a class="hva-pro-back nvs-home" href="./index.html" aria-label="Trang chủ NVS" title="Trang chủ NVS"><i class="bi bi-house-door-fill"></i></a>
+      <div class="hva-pro-online-wrap"><div class="hva-pro-online" title="Hệ thống đang trực tuyến">
+        <span class="hva-pro-online-dot"></span>
+        <span>NVS</span>
+      </div></div>
+    </div>
+
+  </div>
+</header>
+<div class="layout"><aside class="side"><h3>Giao việc – Theo dõi</h3><button class="nav active" data-page="create">✍️ Giao nhiệm vụ</button><button class="nav" data-page="assigned">📤 Đã giao</button><button class="nav" data-page="mine">📥 Việc của tôi</button><button class="nav" data-page="tracking">📊 Theo dõi tiến độ</button><div class="task-alert" style="font-size:12px">Dùng chung nhân sự NVS và Backend. Không tạo nhiệm vụ trùng nghiệp vụ chuyên môn đã có module riêng.</div></aside>
+<main class="main"><div class="task-stat"><div><b id="sTotal">—</b><small>Tổng việc</small></div><div><b id="sPending">—</b><small>Chưa hoàn thành</small></div><div><b id="sReview">—</b><small>Chờ xác nhận</small></div><div><b id="sDone">—</b><small>Đã hoàn thành</small></div></div>
+<div id="message" class="task-alert" role="status">Đang chờ kết nối Backend Giao việc.</div>
+<section class="task-page" id="create"><div class="panel"><div class="topline"><h2>Giao nhiệm vụ mới</h2><span class="tag">1 nhiệm vụ · nhiều người nhận</span></div><p class="sub">Kế thừa giao diện Thông báo – Phát hành; nhiệm vụ có hạn, người nhận và kết quả kiểm tra riêng.</p>
+<div class="grid"><div class="field wide"><label for="title">Tên nhiệm vụ *</label><input id="title" maxlength="250" placeholder="Ví dụ: Rà soát ma trận và đặc tả kiểm tra giữa HKI"></div><div class="field wide"><label for="content">Nội dung, yêu cầu thực hiện *</label><textarea id="content" placeholder="Nêu rõ công việc và yêu cầu cần thực hiện..."></textarea></div><div class="field"><label for="deadline">Hạn hoàn thành *</label><input id="deadline" type="datetime-local"></div><div class="field"><label for="priority">Mức độ ưu tiên</label><select id="priority"><option>Thông thường</option><option>Quan trọng</option><option>Khẩn</option></select></div><div class="field wide"><label for="deliverable">Sản phẩm cần nộp (nếu có)</label><input id="deliverable" placeholder="Ví dụ: Link thư mục Google Drive chứa ma trận, đặc tả và đề"></div><div class="field wide"><label for="sourceUrl">Liên kết văn bản / kế hoạch gốc (nếu có)</label><input id="sourceUrl" type="url" placeholder="https://drive.google.com/..."></div></div>
+<section class="nvs15-card"><h3 class="nvs15-title"><i class="bi bi-people-fill"></i> NGƯỜI NHẬN NHIỆM VỤ <span class="nvs15-counter" id="selectedCount">0 người</span></h3><div class="nvs15-search"><i class="bi bi-search"></i><input id="personSearch" class="nvs15-input" placeholder="Tìm nhanh họ tên hoặc tổ chuyên môn..."></div><div id="people" class="task-people"><div class="muted">Đang tải nhân sự từ HVA_Personnel.js...</div></div><div class="task-selected" id="picked">Chưa chọn người nhận</div><button class="ghost" id="clearPeople" type="button" style="margin-top:9px">Xóa lựa chọn</button></section>
+<section class="nvs15-card"><div class="nvs15-aihead"><span class="nvs15-robot"><i class="bi bi-stars" style="font-size:27px;color:#0872bb"></i></span><div><h3>AI HỖ TRỢ DỰ THẢO NHIỆM VỤ</h3><p>Dùng chung Gemini NVS · Không tự giao việc</p></div></div><label for="prompt">Yêu cầu soạn thảo</label><textarea id="prompt" class="nvs15-area" placeholder="Nêu nhiệm vụ muốn AI hỗ trợ diễn đạt..."></textarea><div class="nvs15-actions"><button id="ai" type="button" class="nvs15-btn">✦ TẠO DỰ THẢO</button><button id="apply" type="button" class="secondary">ĐƯA VÀO NỘI DUNG</button></div><textarea id="aiResult" class="nvs15-area" readonly placeholder="Dự thảo AI xuất hiện tại đây để thầy kiểm tra..."></textarea></section>
+<div class="nvs16-action-panel"><div class="nvs16-action-grid"><button class="nvs16-cancel" id="reset" type="button">HỦY</button><button class="nvs16-preview" id="preview" type="button">XEM TRƯỚC</button><button class="nvs16-publish" id="submit" type="button">GIAO NHIỆM VỤ</button></div><button class="nvs16-draft" id="draft" type="button">LƯU NHÁP TRÊN THIẾT BỊ</button></div></div></section>
+<section class="task-page hidden" id="assigned"><div class="panel"><h2>Nhiệm vụ đã giao</h2><p class="sub">Mỗi người nhận có một trạng thái riêng; không hiển thị dữ liệu mô phỏng.</p><div id="assignedList"></div></div></section>
+<section class="task-page hidden" id="mine"><div class="panel"><h2>Việc của tôi</h2><p class="sub">Tiếp nhận, cập nhật tiến độ và gửi minh chứng Google Drive.</p><div id="mineList"></div></div></section>
+<section class="task-page hidden" id="tracking"><div class="panel"><h2>Theo dõi tiến độ</h2><p class="sub">BGH kiểm tra kết quả và xác nhận hoàn thành hoặc yêu cầu bổ sung.</p><div id="trackingList"></div></div></section></main></div>
+<div class="modal-bg" id="modal"><div class="modal"><div class="topline"><h2 id="modalTitle">Xem trước</h2><button id="closeModal" class="ghost" type="button">Đóng</button></div><div id="modalBody"></div></div></div>
+<script src="./HVA_Personnel.js"></script>
+<script>
+(()=>{'use strict';
+const API='https://script.google.com/macros/s/AKfycbzTRkdqyYYI8LQo9MkiTjEIXkAC7BWK1MroUXPuvKMl9Yu_o9gXFS8QCcyQmq78-ikvvg/exec';const $=id=>document.getElementById(id);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').toLowerCase();
+let personnel=[],personGroups=[],expandedGroups=new Set(),selected=new Map(),rows=[];const token=()=>localStorage.getItem('hvaSessionToken')||sessionStorage.getItem('hvaSessionToken')||'';
+const me=()=>{try{return JSON.parse(localStorage.getItem('user')||sessionStorage.getItem('user')||'{}')}catch(e){return {}}};
+const manager=()=>/hiệu trưởng|phó hiệu trưởng|ban giám hiệu|bgh|admin|quantri/i.test([me().chucVu,me().viTriViecLam,me().vaiTro,me().role].join(' '));
+function msg(s,error=false){$('message').textContent=s;$('message').classList.toggle('error',error)}
+async function api(action,extra={}){if(!token())throw Error('Phiên đăng nhập không hợp lệ. Vui lòng đăng nhập lại.');const res=await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action,sessionToken:token(),...extra})});if(!res.ok)throw Error('Backend HTTP '+res.status);const json=await res.json();if(!(json.ok||json.success))throw Error(json.message||'Backend từ chối yêu cầu');return json}
+function show(page){document.querySelectorAll('.task-page').forEach(x=>x.classList.toggle('hidden',x.id!==page));document.querySelectorAll('.nav').forEach(x=>x.classList.toggle('active',x.dataset.page===page));if(page!=='create')loadTasks()}
+document.querySelectorAll('.nav').forEach(b=>b.addEventListener('click',()=>show(b.dataset.page)));
+function groupName(g){return (g.tenTo==='Tiếng Anh'?'Tổ Ngoại ngữ':g.tenTo)||g.name||'Tổ / bộ phận'}
+function peopleRender(){
+ const q=norm($('personSearch').value.trim());let html='';
+ personGroups.forEach((g,i)=>{
+  const groupPeople=g.members||[],matchGroup=norm(groupName(g)).includes(q);
+  const shown=q&&!matchGroup?groupPeople.filter(p=>norm([p.hoTen,p.username,p.tenTo].join(' ')).includes(q)):groupPeople;
+  if(!shown.length)return;
+  const count=groupPeople.filter(p=>selected.has(p.username)).length;
+  const opened=!!q||expandedGroups.has(i);
+  html+=`<div class="gv-group"><div class="gv-group-head"><button type="button" class="gv-expand" data-expand="${i}" aria-expanded="${opened}">${opened?'▾':'▸'} ${esc(groupName(g))} <small>(${count}/${groupPeople.length})</small></button><label class="gv-selectall"><input type="checkbox" data-group="${i}" ${count===groupPeople.length?'checked':''}> Chọn tổ</label></div>${opened?`<div class="gv-members">${shown.map(p=>`<label class="task-person"><input type="checkbox" data-user="${esc(p.username)}" ${selected.has(p.username)?'checked':''}><span><b>${esc(p.hoTen)}</b> <small>· ${esc(p.tenTo||groupName(g))}</small></span></label>`).join('')}</div>`:''}</div>`;
+ });
+ $('people').innerHTML=html||'<div class="muted">Không tìm thấy nhân sự phù hợp</div>';
+ $('picked').innerHTML=[...selected.values()].map(p=>`<span class="gv-chip">${esc(p.hoTen)} <button type="button" data-remove="${esc(p.username)}" title="Bỏ chọn">×</button></span>`).join('')||'Chưa chọn người nhận';
+ const whole=personGroups.filter(g=>(g.members||[]).length&&(g.members||[]).every(p=>selected.has(p.username))).length;
+ $('selectedCount').textContent=whole+' nhóm · '+selected.size+' người';
+}
+$('personSearch').addEventListener('input',peopleRender);
+$('people').addEventListener('click',e=>{const b=e.target.closest('[data-expand]');if(!b)return;const i=Number(b.dataset.expand);expandedGroups.has(i)?expandedGroups.delete(i):expandedGroups.add(i);peopleRender()});
+$('people').addEventListener('change',e=>{
+ const t=e.target;
+ if(t.dataset.group!==undefined){const g=personGroups[Number(t.dataset.group)];(g?.members||[]).forEach(p=>t.checked?selected.set(p.username,p):selected.delete(p.username));}
+ else if(t.dataset.user){const p=personnel.find(x=>x.username===t.dataset.user);if(t.checked&&p)selected.set(p.username,p);else selected.delete(t.dataset.user);}
+ peopleRender();
+});
+$('picked').addEventListener('click',e=>{const b=e.target.closest('[data-remove]');if(b){selected.delete(b.dataset.remove);peopleRender()}});
+$('clearPeople').onclick=()=>{selected.clear();peopleRender()};
+async function loadPeople(){
+ try{
+  if(!window.HVAPersonnel?.buildGroups)throw Error('Thiếu HVA_Personnel.js');
+  const groups=await window.HVAPersonnel.buildGroups();if(!Array.isArray(groups)||!groups.length)throw Error('Nguồn nhân sự không trả nhóm');
+  const map=new Map();personGroups=groups.map(g=>{const members=(Array.isArray(g.members)?g.members:[]).map(p=>window.HVAPersonnel.normalize(p,groupName(g))).filter(p=>p.username).map(p=>{if(!map.has(p.username))map.set(p.username,p);return p});return {...g,members}});
+  personnel=[...map.values()];peopleRender();
+  try{const d=JSON.parse(localStorage.getItem('NVS_TASK_DRAFT_'+(me().username||'BGH'))||'null');(d?.assignees||[]).forEach(u=>{const p=map.get(u);if(p)selected.set(u,p)});peopleRender()}catch(_){}
+ }catch(e){$('people').textContent='Không tải được nhân sự: '+e.message}
+}
+function form(){return {clientRequestId:taskRequestId,title:$('title').value.trim(),content:$('content').value.trim(),deadline:$('deadline').value,priority:$('priority').value,deliverable:$('deliverable').value.trim(),sourceUrl:$('sourceUrl').value.trim(),assignees:[...selected.keys()]}}
+function valid(d){if(!manager())throw Error('Chỉ BGH được giao nhiệm vụ');if(!d.title||!d.content||!d.deadline)throw Error('Cần nhập tên, nội dung và hạn hoàn thành');if(!d.assignees.length)throw Error('Cần chọn ít nhất một người nhận');if(d.sourceUrl&&!/^https:\/\//i.test(d.sourceUrl))throw Error('Liên kết phải bắt đầu bằng https://');if(new Date(d.deadline).getTime()<=Date.now())throw Error('Hạn hoàn thành phải trong tương lai')}
+function modal(title,body){$('modalTitle').textContent=title;$('modalBody').innerHTML=body;$('modal').style.display='flex'}$('closeModal').onclick=()=>$('modal').style.display='none';
+$('preview').onclick=()=>{const d=form();modal('Xem trước giao việc',`<div class="preview"><h3>${esc(d.title)}</h3><p>${esc(d.content)}</p><p><b>Hạn:</b> ${esc(d.deadline)} · <b>Ưu tiên:</b> ${esc(d.priority)}</p><p><b>Sản phẩm:</b> ${esc(d.deliverable||'Không yêu cầu')}</p><p><b>Người nhận:</b> ${d.assignees.map(x=>esc(selected.get(x)?.hoTen||x)).join(', ')||'Chưa chọn'}</p></div>`)};
+let taskRequestId='req_'+(crypto.randomUUID?crypto.randomUUID().replace(/-/g,''):String(Date.now())+Math.random().toString(36).slice(2));
+$('submit').onclick=async()=>{try{const d=form();valid(d);if(!confirm('Xác nhận giao nhiệm vụ đến '+d.assignees.length+' người?'))return;$('submit').disabled=true;const r=await api('nvsTaskCreate',{task:d});msg('Đã giao nhiệm vụ: '+r.taskId+' · Phát hành: '+(r.publishId||'đã có'));taskRequestId='req_'+(crypto.randomUUID?crypto.randomUUID().replace(/-/g,''):String(Date.now())+Math.random().toString(36).slice(2));show('assigned')}catch(e){msg('Chưa giao nhiệm vụ: '+e.message,true)}finally{$('submit').disabled=false}};
+$('draft').onclick=()=>{localStorage.setItem('NVS_TASK_DRAFT_'+(me().username||'BGH'),JSON.stringify(form()));msg('Đã lưu nháp trên thiết bị này; chưa gửi Backend.')};
+$('reset').onclick=()=>{if(!confirm('Xóa dữ liệu đang nhập?'))return;['title','content','deadline','deliverable','sourceUrl','prompt','aiResult'].forEach(x=>$(x).value='');selected.clear();peopleRender()};
+$('ai').onclick=async()=>{try{const prompt=$('prompt').value.trim();if(!prompt)throw Error('Nhập yêu cầu AI');$('ai').disabled=true;const r=await api('askVirtualAssistant',{question:'Hỗ trợ diễn đạt nhiệm vụ giao cho giáo viên, văn phong hành chính ngắn gọn, không tự giao việc:\n'+prompt});$('aiResult').value=r.answer||r.response||r.text||r.reply||r.data?.answer||'';if(!$('aiResult').value)throw Error('AI chưa trả nội dung')}catch(e){msg('AI: '+e.message,true)}finally{$('ai').disabled=false}};
+$('apply').onclick=()=>{if(!$('aiResult').value.trim())return msg('Chưa có dự thảo AI',true);$('content').value=$('aiResult').value;msg('Đã đưa dự thảo vào nội dung để thầy kiểm tra.')};
+function tag(s){return s==='Đã hoàn thành'?'green':s==='Chờ xác nhận'?'orange':''}
+function card(r,mode){let buttons='';if(mode==='mine'){if(r.status==='Chưa tiếp nhận')buttons='<button class="secondary" data-act="accept" data-id="'+esc(r.recordId)+'">Tiếp nhận</button>';else if(r.status!=='Đã hoàn thành')buttons='<button class="secondary" data-act="report" data-id="'+esc(r.recordId)+'">Báo cáo kết quả</button>'}if(mode==='tracking'&&r.status==='Chờ xác nhận')buttons='<button class="primary" data-act="approve" data-id="'+esc(r.recordId)+'">Xác nhận hoàn thành</button><button class="ghost" data-act="revise" data-id="'+esc(r.recordId)+'">Yêu cầu bổ sung</button>';return `<div class="task-item"><span class="tag ${tag(r.status)}">${esc(r.status)}</span><h3>${esc(r.title)}</h3><small>Người nhận: ${esc(r.assigneeName)} · Hạn: ${esc(r.deadline)} · Ưu tiên: ${esc(r.priority)}</small><p>${esc(r.content)}</p>${r.resultUrl?`<p><a href="${esc(r.resultUrl)}" target="_blank" rel="noopener noreferrer">Minh chứng Google Drive</a></p>`:''}${r.note?`<p class="muted">Ghi chú: ${esc(r.note)}</p>`:''}<div class="task-actions">${buttons}</div></div>`}
+async function loadTasks(){try{const r=await api('nvsTaskList');rows=r.tasks||[];const assigned=rows.filter(x=>x.view==='assigned');const mine=rows.filter(x=>x.view==='mine');$('assignedList').innerHTML=assigned.map(x=>card(x,'assigned')).join('')||'<p class="muted">Chưa có nhiệm vụ đã giao.</p>';$('mineList').innerHTML=mine.map(x=>card(x,'mine')).join('')||'<p class="muted">Chưa có nhiệm vụ được giao.</p>';$('trackingList').innerHTML=assigned.map(x=>card(x,'tracking')).join('')||'<p class="muted">Chưa có dữ liệu theo dõi.</p>';$('sTotal').textContent=assigned.length;$('sPending').textContent=assigned.filter(x=>!['Đã hoàn thành'].includes(x.status)).length;$('sReview').textContent=assigned.filter(x=>x.status==='Chờ xác nhận').length;$('sDone').textContent=assigned.filter(x=>x.status==='Đã hoàn thành').length;msg('Đã kết nối dữ liệu Giao việc – Theo dõi từ Backend.')}catch(e){msg('Chưa kết nối nghiệp vụ Giao việc trên Backend: '+e.message,true)}}
+document.addEventListener('click',async e=>{const b=e.target.closest('[data-act]');if(!b)return;const id=b.dataset.id,act=b.dataset.act;let payload={recordId:id};if(act==='report'){const url=prompt('Dán liên kết sản phẩm Google Drive (để trống nếu không yêu cầu sản phẩm):','');if(url===null)return;const note=prompt('Báo cáo kết quả thực hiện:','');if(note===null)return;payload.resultUrl=url.trim();payload.note=note.trim()}if(act==='revise'){const note=prompt('Nội dung yêu cầu bổ sung:','');if(!note)return;payload.note=note}try{b.disabled=true;await api('nvsTaskUpdate',{operation:act,...payload});await loadTasks()}catch(err){msg(err.message,true)}finally{b.disabled=false}});
+if(!token())msg('Chưa có phiên đăng nhập NVS. Vui lòng đăng nhập lại.',true);else{loadPeople();loadTasks();try{const d=JSON.parse(localStorage.getItem('NVS_TASK_DRAFT_'+(me().username||'BGH'))||'null');if(d){['title','content','deadline','priority','deliverable','sourceUrl'].forEach(k=>{if(d[k]!==undefined)$(k).value=d[k]});}}catch(e){}}
+})();
+</script></body></html>
